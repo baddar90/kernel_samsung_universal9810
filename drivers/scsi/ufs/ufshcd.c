@@ -8836,7 +8836,7 @@ static void ufs_sec_send_errinfo(void *data)
 	}
 	if (&(hba->SEC_err_info)) {
 		err_info = &(hba->SEC_err_info);
-		sprintf(buf, "U%dH%dL%dX%dQ%dR%dW%dF%dSM%dSH%d",
+		snprintf(buf, sizeof(buf), "U%dH%dL%dX%dQ%dR%dW%dF%dSM%dSH%d",
 				(err_info->UTP_count.UTP_err > 9)	/* UTP Error */
 				? 9 : err_info->UTP_count.UTP_err,
 				(err_info->op_count.HW_RESET_count > 9)	/* HW Reset */

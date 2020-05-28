@@ -1254,7 +1254,7 @@ vfs_kern_mount(struct file_system_type *type, int flags, const char *name, void 
 		root = mount_fs(type, flags, name, mnt->mnt, data);
 #else
 		mnt->mnt.mnt_flags = MNT_INTERNAL;
-		root = mount_fs(type, flags, name, &mnt->mnt, data);
+	root = mount_fs(type, flags, name, &mnt->mnt, data);
 #endif
 
 	if (IS_ERR(root)) {
